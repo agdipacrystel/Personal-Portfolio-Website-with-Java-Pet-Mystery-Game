@@ -1,0 +1,258 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystel Mae | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Crystel Mae Agdipa</h1>
+    <p>BS Information Technology Student</p>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Personal Info</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#java">Java Code</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <img src="12345.jpg" alt="My Profile Picture">
+    <h2>Hello, I'm Crystel!</h2>
+    <p>A first-year BSIT student who is passionate about learning technology and programming.</p>
+    <a href="#about" class="btn">Explore My Portfolio</a>
+</section>
+
+<section id="about">
+    <h2>Personal Information</h2>
+    <div class="card">
+        <p><b>Full Name:</b> Crystel Mae Alejo Agdipa</p>
+        <p><b>Course:</b> Bachelor of Science in Information Technology</p>
+        <p><b>Year Level:</b> First Year</p>
+        <p><b>About Me:</b> I am a hardworking and determined student who enjoys learning new things. I want to improve my knowledge and skills in technology and become a successful IT professional.</p>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Educational Background</h2>
+    <div class="card">
+        <h3>College</h3>
+        <p>Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+        <p>BS Information Technology</p>
+
+        <h3>Senior High School</h3>
+        <p>Pacac High School</p>
+        <p>Humanities and Social Sciences (HUMSS)</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div> 
+        <div class="skill">Canva</div>
+        <div class="skill">Problem Solving</div>
+    </div>
+</section>
+<section id="java">
+    <h2>Java Code</h2>
+
+    <div class="card">
+        <h3>Pet Mystery Game</h3>
+
+        <p>
+            This is my final performance task for CC102.
+            It is a console-based Java guessing game where
+            players identify different pets using clues.
+        </p>
+
+        <h3>Game Features</h3>
+        <ul>
+            <li>Three difficulty levels</li>
+            <li>Five questions per level</li>
+            <li>Pet guessing challenges</li>
+            <li>Three chances for each question</li>
+            <li>Score tracking</li>
+            <li>Play again option</li>
+        </ul>
+
+        <h3>Java Source Code</h3>
+
+        <pre><code>
+import java.util.Scanner;
+
+public class PetMysteryGame {
+    public static void main(String[] args) {
+
+        Scanner e = new Scanner(System.in);
+
+        String[][] pets = {
+            {"cat", "dog", "rabbit", "fish", "bird"},
+            {"owl", "penguin", "dolphin", "turtle", "fox"},
+            {"platypus", "chameleon", "octopus", "hedgehog", "flamingo"}
+        };
+
+        String[][] clues = {
+            {
+                "I say meow and love to sleep.",
+                "I bark and guard your home.",
+                "I have long ears and love carrots.",
+                "I live in water and have fins.",
+                "I have wings and can fly."
+            },
+            {
+                "I can turn my head almost all the way around.",
+                "I am a bird but I cannot fly. I love cold places.",
+                "I am a smart sea animal that uses sounds to communicate.",
+                "I carry my home on my back.",
+                "I have a bushy tail and I am known for being clever."
+            },
+            {
+                "I am a mammal, but I lay eggs and have a duck-like bill.",
+                "I can change my skin color to blend with my surroundings.",
+                "I have eight arms and can squeeze through small spaces.",
+                "I have spines on my back and curl into a ball for protection.",
+                "I am a tall pink bird that often stands on one leg."
+            }
+        };
+
+        String[] levels = {"Easy", "Intermediate", "Difficult"};
+
+        String playAgain = "yes";
+
+        System.out.println("==================================");
+        System.out.println("        PET MYSTERY GAME");
+        System.out.println("==================================");
+
+        while (playAgain.equalsIgnoreCase("yes")) {
+
+            int level = -1;
+            int score = 0;
+
+            System.out.println("\nSELECT DIFFICULTY");
+            System.out.println("1. Easy");
+            System.out.println("2. Intermediate");
+            System.out.println("3. Difficult");
+
+            while (level == -1) {
+
+                System.out.print("\nEnter level: ");
+                String choice = e.nextLine();
+
+                if (choice.equalsIgnoreCase("easy") || choice.equals("1")) {
+                    level = 0;
+                } 
+                else if (choice.equalsIgnoreCase("intermediate") || choice.equals("2")) {
+                    level = 1;
+                } 
+                else if (choice.equalsIgnoreCase("difficult") || choice.equals("3")) {
+                    level = 2;
+                } 
+                else {
+                    System.out.println("Invalid choice! Try again.");
+                }
+            }
+
+            System.out.println("\nYou selected " + levels[level] + " Mode!");
+            System.out.println("You have 3 chances for each pet.");
+
+            for (int i = 0; i < 5; i++) {
+
+                int chances = 3;
+                boolean correct = false;
+
+                System.out.println("\n------------------------------");
+                System.out.println("MYSTERY PET #" + (i + 1));
+                System.out.println("Clue: " + clues[level][i]);
+
+                while (chances > 0) {
+
+                    System.out.print("Your answer: ");
+                    String answer = e.nextLine();
+
+                    if (answer.equalsIgnoreCase(pets[level][i])) {
+
+                        System.out.println("Correct! Amazing!");
+                        score++;
+                        correct = true;
+                        break;
+
+                    } else {
+
+                        chances--;
+                        System.out.println("Wrong answer!");
+
+                        if (chances > 0) {
+                            System.out.println("Chances left: " + chances);
+                        }
+                    }
+                }
+
+                if (!correct) {
+                    System.out.println("The correct answer is: " + pets[level][i]);
+                }
+            }
+
+            System.out.println("\n==================================");
+            System.out.println("             GAME OVER");
+            System.out.println("==================================");
+
+            System.out.println("Difficulty: " + levels[level]);
+            System.out.println("Your Score: " + score + "/5");
+
+            if (score == 5) {
+                System.out.println("Perfect! You are a Pet Master!");
+            } 
+            else if (score >= 3) {
+                System.out.println("Great job, Pet Detective!");
+            } 
+            else {
+                System.out.println("Keep practicing, Detective!");
+            }
+
+            System.out.print("\nDo you want to play again? (yes/no): ");
+            playAgain = e.nextLine();
+
+            while (!playAgain.equalsIgnoreCase("yes")
+                    && !playAgain.equalsIgnoreCase("no")) {
+
+                System.out.print("Please enter yes or no: ");
+                playAgain = e.nextLine();
+            }
+        }
+
+        System.out.println("\nThank you for playing!");
+        System.out.println("Goodbye, Pet Detective!");
+
+        e.close();
+    }
+}
+
+        </code></pre>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Information</h2>
+    <div class="card">
+        <p>Email: crystelmae00@gmail.com</p>
+        <p>Location: Pacac, Guimba, Nueva Ecija, Philippines</p>
+        <p>Phone Number : 0967-760-4460</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Crystel Mae Agdipa | My Personal Portfolio</p>
+    <p>Build Dreams. Code Futures.</p>
+</footer>
+
+</body>
+</html>

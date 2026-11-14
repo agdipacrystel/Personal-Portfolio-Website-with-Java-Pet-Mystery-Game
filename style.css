@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f3fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #30204f;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d9b8ff;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #e8dafa, #f7e9f2);
+}
+
+.hero img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    color: #30204f;
+    font-size: 32px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    background: #65449b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+section {
+    padding: 45px 10%;
+}
+
+section h2 {
+    text-align: center;
+    color: #503477;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 850px;
+    margin: auto;
+}
+
+.card h3 {
+    color: #65449b;
+    margin-top: 15px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill {
+    background: #65449b;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+
+pre {
+    background: #eeeaf5;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+footer {
+    background: #30204f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    section {
+        padding: 35px 6%;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+}
+
+
+
+
